@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title 'Grafikart' %}</title>
+        <title>{% block title 'Linkmat Blog' %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,700|Roboto:300,400&display=swap" rel="stylesheet">
         <link rel="manifest" href="/manifest.webmanifest">
@@ -14,6 +14,29 @@
         {% endblock %}
     </head>
     <body {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
+
+    <nav class="header {% if headerWhite is defined %}is-white{% endif %}">
+        <ul class="header-nav">
+            <li class="header__home"><a href="#" title="Accueil">{{ icon('home') }}</a></li>
+            <li><a href="#" >{{ icon('video') }} Tutoriels</a></li>
+            <li><a href="#">{{ icon('lines') }} Formations</a></li>
+            <li><a href="#"  {{ menu_active('forum') }}>{{ icon('comment') }} Forum</a></li>
+            <li><a href="#" >{{ icon('camera') }} Live</a></li>
+            <li><a href="#" {{ menu_active('blog') }}>{{ icon('pen') }} Blog</a></li>
+            <li id="dark-toggle"><a href="#">Dark</a></li>
+        </ul>
+        <ul class="header-side">
+            <li class="header__notification">
+            </li>
+            <li class="header__search"><a href="#">{{ icon('search') }}</a></li>
+            {% if app.user %}
+                <li class="header__account"><a href="{{ path('app_register') }}">{{ icon('user') }} {{ app.user.username }}</a>
+                </li>
+            {% else %}
+                <li class="header__account"><a href="{{ path('app_login')}}">{{ icon('user') }} Se connecter</a></li>
+            {% endif %}
+        </ul>
+    </nav>
 
     {% block body %}{% endblock %}
 

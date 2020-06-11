@@ -1,9 +1,9 @@
 
 <article class="blog-post">
     <div class="blog-post__body">
-        <h2 class="blog-post__title"><a href="{{ path('blog_show', {slug: post.slug, id: post.id})}}">{{ post.title }}</a></h2>
+        <h2 class="blog-post__title"><a href="{{ path('blog_show', {slug: post.slug, id: post.id}) }}">{{ post.title }}</a></h2>
         <div class="blog-post__meta">
-            <div>{{ post.createdAt | ago }} | Dans la categorie <a href="#">{{ post.category.title }}</a> </div>
+            <div>{{ post.createdAt | ago }} | Dans la categorie <a href="{{ path('blogCat_show', {id: post.category.id})  }}">{{ post.category.title }}</a> </div>
             <div>Auteur <a href="#">{{ post.author.username }}</a></div>
         </div>
         <p>

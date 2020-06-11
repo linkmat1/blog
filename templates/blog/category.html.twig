@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for categories in  cat %}
+<ul>
+    <li>
+        {{ categories.posts.title}}
+        {{ post.category.id }}
+    </li>
+</ul>
+
+
+{% endfor %}
+{% endblock %}
