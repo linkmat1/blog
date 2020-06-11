@@ -87,45 +87,11 @@ body::after {
   background: var(--contrast);
   color: #FFF;
 }
-
 // Modules
-// ==================
-@import "modules/header";
+// ===============
 @import "modules/card";
-@import "modules/scrollbar";
-@import "modules/btn";
-@import "modules/pagination";
-@import "modules/form";
-@import "modules/alert";
-@import "modules/formatted";
-@import "modules/table";
-@import "modules/modal";
-@import "modules/list";
-@import "modules/comments";
-@import "modules/page";
-@import "modules/breadcrumb";
-@import "modules/hero";
-@import "modules/nav";
-@import "modules/highlight";
-@import "modules/pricing";
-@import "modules/notifications";
-@import "modules/modal";
 
 // Pages
 // ==================
-@import "pages/live";
-@import "pages/course";
-@import "pages/chapters";
-@import "pages/auth";
-@import "pages/blog";
-@import "pages/dashboard";
-@import "pages/env";
-@import "pages/formations";
-@import "pages/home";
-@import "pages/forum";
-@import "pages/user";
-// @import "pages/single";
-// @import "pages/single";
-// @import "pages/single";
 
-@import '~microtip/microtip';
+@import "pages/blog";

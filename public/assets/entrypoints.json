@@ -2,14 +2,14 @@
   "entrypoints": {
     "app": {
       "js": [
-        "http://http:/localhost:8080/assets/runtime.js",
-        "http://http:/localhost:8080/assets/app.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/app.js"
       ]
     },
     "admin": {
       "js": [
-        "http://http:/localhost:8080/assets/runtime.js",
-        "http://http:/localhost:8080/assets/admin.js"
+        "http://localhost:8080/assets/runtime.js",
+        "http://localhost:8080/assets/admin.js"
       ]
     }
   }

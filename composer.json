@@ -6,6 +6,8 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.2",
+        "erusev/parsedown": "^1.7",
+        "knplabs/knp-time-bundle": "^1.11",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "5.1.*",
         "symfony/console": "5.1.*",

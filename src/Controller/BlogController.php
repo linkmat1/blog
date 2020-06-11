@@ -4,11 +4,12 @@ namespace App\Controller;
 
 
 
+use App\Entity\Post;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController {
+class BlogController extends AbstractController {
 
     /**
      * @var PostRepository
@@ -31,4 +32,13 @@ class HomeController extends AbstractController {
        return $this->render('page/index.html.twig', compact('posts'));
     }
 
+    /**
+     * @Route("/{slug}{id}", name="blog_show", methods={"GET"})
+     * @param Post $post
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function show(Post $post){
+
+        return $this->render('blog/show.html.twig', compact('post'));
+    }
 }

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
+        <meta charset="UTF-8">
+        <title>{% block title 'Grafikart' %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,700|Roboto:300,400&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="manifest" href="/manifest.webmanifest">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -12,7 +13,8 @@
             {{ encore_entry_script_tags('app') | replace({'<script': '<script defer'}) | raw }}
         {% endblock %}
     </head>
-    <body>
+    <body {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
+
     {% block body %}{% endblock %}
 
     </body>
