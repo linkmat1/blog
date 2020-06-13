@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -16,6 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface
 {
     /**
+     *@Groups({"default"})
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -23,6 +25,7 @@ class User implements UserInterface
     private ?int $id = null;
 
     /**
+     * @Groups({"default"})
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private string  $username = "";
@@ -51,10 +54,6 @@ class User implements UserInterface
     private bool $acceptTerm = false;
 
 
-    private \DateTimeInterface $createdAt;
-
-    private ?\DateTimeInterface $updatedAt;
-
     /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="author")
      */
@@ -63,6 +62,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->posts = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -175,41 +175,6 @@ class User implements UserInterface
         $this->acceptTerm = $acceptTerm;
         return $this;
     }
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getCreatedAt(): \DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param \DateTimeInterface $createdAt
-     * @return User
-     */
-    public function setCreatedAt(\DateTimeInterface $createdAt): User
-    {
-        $this->createdAt = $createdAt;
-        return $this;
-    }
-
-    /**
-     * @return \DateTimeInterface|null
-     */
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @param \DateTimeInterface|null $updatedAt
-     * @return User
-     */
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): User
-    {
-        $this->updatedAt = $updatedAt;
-        return $this;
-    }
 
     /**
      * @return Collection|Post[]
@@ -241,5 +206,4 @@ class User implements UserInterface
 
         return $this;
     }
-
 }

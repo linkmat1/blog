@@ -22,3 +22,10 @@ App\Entity\CategoryBlog:
     content: <text(200)>
     created_at: <dateTimeThisYear()>
     updated_at: <dateTimeThisYear()>
+
+App\Entity\CommentBlog:
+  comments (template):
+    content: <sentence(5, true)>
+    created_at: <dateTimeThisYear()>
+    updated_at: <dateTimeThisYear()>
+    author: '@user1'

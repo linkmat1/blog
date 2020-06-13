@@ -11,3 +11,7 @@ App\Entity\Post:
 
 App\Entity\CategoryBlog:
   category{1..5} (extends category):
+
+App\Entity\CommentBlog:
+  comments{1..80} (extends comments):
+    post: '@post*'
